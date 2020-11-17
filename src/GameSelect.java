@@ -17,19 +17,17 @@ public class GameSelect {
 
     public static void selectGame(){
         //Effect: User Selects which game to play, MAH or LOV and starts Game
-        //Returns: Game Selected
     	
     	System.out.println("We have two games: [1] Legends: Monsters and Heroes");
-    	System.out.println("		[2] Legends of Valor");
+    	System.out.println("		   [2] Legends of Valor");
     	System.out.print("Please enter a number to choose from games: ");
-    	
-    	in.nextLine();
     	int gameNum = isInt();
-    	while (gameNum!=1||gameNum!=2) {
-    		System.out.println("Invalid input! Please enter a number to choose from 2 games: ");
+    	while (gameNum!=1 && gameNum!=2) {
+    		System.out.print("Invalid input! Please enter a number to choose from 2 games: ");
     		in.nextLine();
     		gameNum = isInt();
     	}
+    	System.out.println();
     	if(gameNum==1) {
     		MonsterANDHeroes game = new MonsterANDHeroes();
             game.start();
@@ -37,7 +35,6 @@ public class GameSelect {
     		LegendsOfValor game = new LegendsOfValor();
     		game.start();
     	}
-         
     }
     
     
